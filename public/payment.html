@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="payment-form">
+        <h2>Payment Details</h2>
+        <input type="text" placeholder="Card Number" required>
+        <input type="text" placeholder="Cardholder Name" required>
+        <input type="text" placeholder="Expiry Date (MM/YY)" required>
+        <input type="text" placeholder="CVV" required>
+        <button onclick="completePayment()">Pay Now</button>
+    </div>
+
+    <script>
+        function completePayment() {
+            alert("Payment successful!");
+            window.opener.postMessage('paymentComplete', '*');
+            window.close();
+        }
+    </script>
+</body>
+</html>
